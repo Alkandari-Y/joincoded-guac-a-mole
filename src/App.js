@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Start from './components/Start';
+import Game from './components/Game';
+import Timer from './components/Timer'
+import Score from './components/Score'
 
 function App() {
+
+  const [remainingTime, setRemainingTime] = useState(1200)
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <h1>Guac-A-Mole!</h1>
       </header>
+      <main className="container-game">
+        <Start />
+        <div>
+          <Timer />
+          <Score />
+        </div>
+        <Game />
+        
+
+      </main>
     </div>
   );
 }
